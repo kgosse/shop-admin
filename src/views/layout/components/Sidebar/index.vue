@@ -25,9 +25,8 @@ export default {
       'sidebar'
     ]),
     routes() {
-      // eslint-disable-next-line
-      console.log(this.$router.options.menu);
-      return this.$router.options.menu
+      // console.log(this.$router.options.menu);
+      return this.$router.options.routes
     },
     isCollapse() {
       return !this.sidebar.opened

@@ -10,9 +10,9 @@ Vue.use(Router)
 import Layout from '../views/layout/Layout';
 import Login from '@/views/login';
 import Notfound from '@/views/404';
-import Games from '@/views/games';
-import Stats from '@/views/stats';
-import Users from '@/views/users';
+// import Games from '@/views/games';
+// import Stats from '@/views/stats';
+// import Users from '@/views/users';
 
 /**
 * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
@@ -42,26 +42,37 @@ export const constantRouterMap = [
     component: Layout,
     // redirect: '/games',
     // hidden: true,
+    children: [{
+      path: '',
+      name: 'Games',
+      component: () => import('@/views/games/index'),
+      meta: { title: 'Games', icon: 'nested' }
+    }]
+  },
+
+  {
+    path: '/stats',
+    component: Layout,
     children: [
       {
         path: '',
-        name: 'Games',
-        component: Games,
-        meta: { title: 'Games', icon: 'nested' }
-      },
-      {
-        path: '/stats',
         name: 'Stats',
-        component: Stats,
+        component: () => import('@/views/stats/index'),
         meta: { title: 'Stats', icon: 'nested' }
-      },
+      }
+    ]
+  },
+
+  {
+    path: '/users',
+    component: Layout,
+    children: [
       {
-        path: '/users',
+        path: '',
         name: 'Users',
-        component: Users,
+        component: () => import('@/views/users/index'),
         meta: { title: 'Users', icon: 'user' }
       }
-
     ]
   },
 
@@ -72,5 +83,5 @@ export default new Router({
   // mode: 'history', //后端支持可开
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap,
-  menu: constantRouterMap[2].children
+  // menu: constantRouterMap[2].children
 })
