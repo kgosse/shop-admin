@@ -38,8 +38,8 @@ export default {
         }
       })
       const first = matched[0]
-      if (first && first.name !== 'games') {
-        matched = [{ path: '/games', meta: { title: 'MAP-BABYFOOT' }}].concat(matched)
+      if (first && first.name !== 'home') {
+        matched = [{ path: '/', meta: { title: 'SHOP-ADMIN' }}].concat(matched)
       }
       this.m_levelList = matched
     }
