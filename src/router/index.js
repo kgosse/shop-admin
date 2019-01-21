@@ -42,7 +42,7 @@ export const constantRouterMap = [
     children: [{
       path: '',
       name: 'home',
-      component: () => import('@/views/games/index'),
+      component: () => import('@/views/Home'),
       meta: { title: 'Home', icon: 'nested' }
     }]
   },
@@ -54,7 +54,7 @@ export const constantRouterMap = [
       {
         path: '',
         name: 'users',
-        component: () => import('@/views/users/index'),
+        component: () => import('@/views/Users'),
         meta: { title: 'Users', icon: 'user' }
       }
     ]
@@ -67,7 +67,7 @@ export const constantRouterMap = [
       {
         path: '',
         name: 'products',
-        component: () => import('@/views/stats/index'),
+        component: () => import('@/views/Products'),
         meta: { title: 'Products', icon: 'nested' }
       }
     ]
