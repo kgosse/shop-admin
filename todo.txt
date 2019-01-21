@@ -1,0 +1,15 @@
+* force user to login
+* handle login
+* handle logout
+* handle password recovery
+  * create view/component to reset password
+  * reset password backend-side
+* users menu
+  * list users
+    * add admins filter
+    * add regular users filter
+  * handle CRUD on users
+* products menu
+  * list products
+  * handle CRUD on products
+* manage user profile
