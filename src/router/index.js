@@ -27,6 +27,7 @@ export const constantRouterMap = [
   { 
     path: '/login',
     component: Login,
+    name: 'login',
     hidden: true 
   },
   { 
@@ -55,7 +56,7 @@ export const constantRouterMap = [
         path: '',
         name: 'users',
         component: () => import('@/views/Users'),
-        meta: { title: 'Users', icon: 'user' }
+        meta: { title: 'Users', icon: 'user', protected: true }
       }
     ]
   },
@@ -68,7 +69,7 @@ export const constantRouterMap = [
         path: '',
         name: 'products',
         component: () => import('@/views/Products'),
-        meta: { title: 'Products', icon: 'nested' }
+        meta: { title: 'Products', icon: 'nested', protected: true }
       }
     ]
   },

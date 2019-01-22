@@ -19,6 +19,18 @@ Vue.config.productionTip = false;
 
 Vue.use(ElementUI, {locale});
 
+router.beforeEach((to, from, next) => {
+  if (to.meta && to.meta.protected) {
+    if (!store.getters.isLoggedIn) {
+      next({ name: 'login' })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
+
 new Vue({
   router,
   store,

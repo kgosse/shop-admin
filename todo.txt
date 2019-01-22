@@ -1,4 +1,4 @@
-* force user to login
+- force user to login(done)
 * handle login
 * handle logout
 * handle password recovery
